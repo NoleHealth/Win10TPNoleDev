@@ -5,6 +5,11 @@ VisualStudioVersion = 14.0.22823.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorld1", "HelloWorld1\HelloWorld1.csproj", "{A7C753E7-176B-4841-A7DE-41E6767934D2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Todos", "Todos", "{DE5476B6-BE28-4378-9F3D-E87B7B3A2439}"
+	ProjectSection(SolutionItems) = preProject
+		Dev Samples List.html = Dev Samples List.html
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM = Debug|ARM
