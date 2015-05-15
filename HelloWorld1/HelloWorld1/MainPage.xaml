@@ -14,5 +14,7 @@
 <Button Content="Birdies Shot or Not" VerticalAlignment="Top" />
         <Border Height="50"  VerticalAlignment="Top" HorizontalAlignment="Stretch" BorderThickness="2" BorderBrush="Azure" Background="Beige" />
         <Button Content="Wow Transmog Hot or Not" VerticalAlignment="Top" />
+        <Border Height="50"  VerticalAlignment="Top" HorizontalAlignment="Stretch" BorderThickness="2" BorderBrush="Azure" Background="Beige" />
+        <Button Content="Win10 WTF" VerticalAlignment="Top" />
     </StackPanel>
 </Page>
