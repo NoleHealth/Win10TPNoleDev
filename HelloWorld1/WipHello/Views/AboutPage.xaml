@@ -1,0 +1,30 @@
+﻿<Page
+    x:Class="WipHello.Views.AboutPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WipHello.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Hub Header="About" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <HubSection Width="550" ScrollViewer.VerticalScrollBarVisibility="Auto">
+            <DataTemplate>
+                <TextBlock TextWrapping="WrapWholeWords" FontSize="16">
+                    <Run>Hello World from About.</Run>
+                    <LineBreak />
+                    <LineBreak />
+                    <Run>Reponsive</Run>
+                    <LineBreak />
+                    <Run>Notifications</Run>
+                    
+                    <LineBreak />
+                    <Run>MvvmLight</Run>
+                    <LineBreak />
+                    
+                </TextBlock>
+            </DataTemplate>
+        </HubSection>
+    </Hub>
+
+</Page>
