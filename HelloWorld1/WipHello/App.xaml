@@ -4,8 +4,26 @@
                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                      xmlns:local="using:WipHello"            >
 
-    
+    <common:BootStrapper.Resources>
+        <!-- design reference http://osguni/?id=19359&Background=19361 -->
+
+        <!-- temporary solution until generic.xaml is updated -->
+        <Color x:Key="SystemListAccentLowColor">#FF004780</Color>
+    <Color x:Key="SystemListAccentMediumColor">#FF005FAB</Color>
+    <Color x:Key="SystemListAccentHighColor">#FF006BC0</Color>
         
+        <SolidColorBrush x:Key="BlueBrush" Color="#FF1C90D1"/>
+        <SolidColorBrush x:Key="DarkGreyBrush" Color="#FF363636"/>
+        <SolidColorBrush x:Key="MidGreyBrush" Color="#FF7A7A7A"/>
+        <SolidColorBrush x:Key="EggshellBrush" Color="#FFFAFFF7"/>
+        <SolidColorBrush x:Key="OrangeBrush" Color="#FFFF9C1E"/>
+        <FontFamily x:Key="LustScriptFont">/Assets/Fonts/LustScriptDisplay.otf#Lust Script Display</FontFamily>
+        <FontFamily x:Key="DomusTitlingFont">/Assets/Fonts/DomusTitling.otf#Domus Titling</FontFamily>
+        <FontFamily x:Key="IskraLtFont">/Assets/Fonts/IskraLt.otf#Iskra Lt</FontFamily>
+        <FontFamily x:Key="AlternateGothicFont">/Assets/Fonts/AlternateGotNo1D.otf#Alternate Gothic No1 D</FontFamily>
+
+    </common:BootStrapper.Resources>
+
 </common:BootStrapper>
     
    

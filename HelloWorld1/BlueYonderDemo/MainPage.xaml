@@ -8,6 +8,7 @@
     mc:Ignorable="d"
     RequestedTheme="Light">
 
+    
     <Grid Background="{StaticResource EggshellBrush}">
         
                 <VisualStateManager.VisualStateGroups>
@@ -80,7 +81,7 @@
         <SplitView x:Name="MenuSplitView" DisplayMode="Inline" IsPaneOpen="True">
             <SplitView.Pane>
                 <Grid Background="{StaticResource DarkGreyBrush}">
-                                        <StackPanel x:Name="tree">
+                    <StackPanel x:Name="tree">
                         <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0,50,0,8" >
                             <SymbolIcon Symbol="Home"  Margin="12,0,0,0" VerticalAlignment="Center"
                                         ToolTipService.Placement="Right" Foreground="{StaticResource BlueBrush}"/>

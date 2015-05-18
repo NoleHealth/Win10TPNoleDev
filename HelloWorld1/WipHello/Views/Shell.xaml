@@ -18,10 +18,16 @@
             <Style TargetType="TextBlock" BasedOn="{StaticResource SplitViewTextBlockStyle}" />
             <Style TargetType="RadioButton" BasedOn="{StaticResource SplitViewRadioButtonStyle}" />
 
+            
+
         </ResourceDictionary>
 
     </Page.Resources>
-    <Grid>
+    <!--add back buttom to top
+    wire up nav button commands
+    fix fonts
+    remove other burger - comment out-->
+    <Grid Background="{StaticResource EggshellBrush}">
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="WindowStates">
 
@@ -68,37 +74,21 @@
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
 
-        <SplitView x:Name="ShellSplitView" IsPaneOpen="True">
+        <SplitView x:Name="ShellSplitView">
             <SplitView.Pane>
-                <Grid Background="{StaticResource SplitViewBackgroundBrush}">
+                <Grid Background="{StaticResource DarkGreyBrush}">
+                
+                <!--<Grid Background="{StaticResource SplitViewBackgroundBrush}">-->
 
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
+                        
                         <RowDefinition Height="*" />
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
 
-                    <ScrollViewer Grid.Row="0" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto">
-                        <StackPanel>
+                   
 
-                            <!-- back -->
-                            <RadioButton Checked="DontCheck" Command="{Binding BackCommand}"  Background="{StaticResource SystemControlBackgroundAccentBrush}">
-                                <RadioButton.Tag>
-                                    <TextBlock Text="{StaticResource BackButtonText}" FontSize="{StaticResource SplitViewLargeNavFontSize}" />
-                                </RadioButton.Tag>
-                            </RadioButton>
-
-                            <!-- hamburger -->
-                            <RadioButton Checked="DontCheck" Command="{Binding MenuCommand}">
-                                <RadioButton.Tag>
-                                    <TextBlock Text="{StaticResource MenuButtonText}" FontSize="{StaticResource SplitViewLargeNavFontSize}" />
-                                </RadioButton.Tag>
-                            </RadioButton>
-
-                        </StackPanel>
-                    </ScrollViewer>
-
-                    <StackPanel x:Name="RadioButtonContainer" Grid.Row="1">
+                    <StackPanel x:Name="RadioButtonContainer" Grid.Row="0">
 
                         <!-- home -->
                         <RadioButton Command="{Binding NavCommand}" Content="Home" GroupName="Nav">
@@ -139,9 +129,32 @@
                                 <TextBlock Text="B" />
                             </RadioButton.Tag>
                         </RadioButton>
+                        
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0,50,0,8" >
+                                <SymbolIcon Symbol="Home"  Margin="12,0,0,0" VerticalAlignment="Center"
+                                        ToolTipService.Placement="Right" Foreground="{StaticResource BlueBrush}"/>
+                                <TextBlock Text="Home" Margin="24,0,0,0" VerticalAlignment="Center" Foreground="{StaticResource BlueBrush}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,0,8" >
+                                <SymbolIcon Symbol="OutlineStar"  Margin="12,0,0,0" VerticalAlignment="Center"
+                                        ToolTipService.Placement="Right" Foreground="{StaticResource EggshellBrush}"/>
+                                <TextBlock Text="BlueYonder Miles" Margin="24,0,0,0" VerticalAlignment="Center" Foreground="{StaticResource EggshellBrush}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,0,8" >
+                                <SymbolIcon Symbol="World"  Margin="12,0,0,0" VerticalAlignment="Center"
+                                        ToolTipService.Placement="Right" Foreground="{StaticResource EggshellBrush}"/>
+                                <TextBlock Text="Book a flight" Margin="24,0,0,0" VerticalAlignment="Center" Foreground="{StaticResource EggshellBrush}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,0,8" >
+                                <SymbolIcon Symbol="Phone"  Margin="12,0,0,0" VerticalAlignment="Center"
+                                        ToolTipService.Placement="Right" Foreground="{StaticResource EggshellBrush}"/>
+                                <TextBlock Text="Help" Margin="24,0,0,0" VerticalAlignment="Center" Foreground="{StaticResource EggshellBrush}"/>
+                            </StackPanel>
+
+                        
                     </StackPanel>
 
-                    <StackPanel Grid.Row="2">
+                    <StackPanel Grid.Row="1">
 
                         <!-- settings -->
                         <RadioButton Command="{Binding NavCommand}" Content="Settings" GroupName="Nav">
@@ -158,5 +171,36 @@
                 </Grid>
             </SplitView.Pane>
         </SplitView>
+
+        <Grid Height="64" HorizontalAlignment="Stretch" Background="{StaticResource BlueBrush}" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="48"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <ScrollViewer  HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto">
+                <StackPanel>
+
+                    <Button  x:Name="PanelToggle" VerticalAlignment="Top" Background="#22000000" Height="32" Width="48" Command="{Binding MenuCommand}">
+                        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <Rectangle Height="2" Width="18" Fill="{StaticResource EggshellBrush}"/>
+                            <Rectangle Height="2" Width="18" Fill="{StaticResource EggshellBrush}" Margin="0,2"/>
+                            <Rectangle Height="2" Width="18" Fill="{StaticResource EggshellBrush}"/>
+                        </StackPanel>
+                    </Button>
+
+
+                    <!-- back -->
+
+                    <Button x:Name="btnBack" VerticalAlignment="Top" Background="#22000000" Height="32" Width="48" Command="{Binding BackCommand}">
+                        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <TextBlock Text="{StaticResource BackButtonText}" FontSize="{StaticResource SplitViewLargeNavFontSize}" />
+                        </StackPanel>
+                    </Button>
+
+                </StackPanel>
+            </ScrollViewer>
+            
+            
+        </Grid>
     </Grid>
 </Page>

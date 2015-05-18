@@ -53,7 +53,19 @@ namespace WipHello.Views
         public Mvvm.Command MenuCommand { get { return _menuCommand ?? (_menuCommand = new Mvvm.Command(ExecuteMenu)); } }
         private void ExecuteMenu()
         {
-            this.ShellSplitView.IsPaneOpen = !this.ShellSplitView.IsPaneOpen;
+            //this.ShellSplitView.IsPaneOpen = !this.ShellSplitView.IsPaneOpen;
+            if (ShellSplitView.IsPaneOpen)
+            {
+                ShellSplitView.IsPaneOpen = false;
+                if (ShellSplitView.DisplayMode == SplitViewDisplayMode.Inline)
+                {
+                    ShellSplitView.DisplayMode = SplitViewDisplayMode.CompactInline;
+                }
+            }
+            else
+            {
+                ShellSplitView.IsPaneOpen = true;
+            }
         }
 
         // nav
