@@ -1,0 +1,6 @@
+http://www.microsoftvirtualacademy.com/training-courses/designing-your-xaml-ui-with-blend-jump-start
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+
+Next Video:
+Developing Universal Windows Apps with C# and XAML
+http://www.microsoftvirtualacademy.com/training-courses/developing-universal-windows-apps-with-c-and-xaml
