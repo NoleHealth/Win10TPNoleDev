@@ -1,0 +1,38 @@
+﻿@model ByDesign.SOA.Common.IModels.[AREA].I[MODEL]
+
+@section scripts
+{
+    <script type="text/javascript">
+    function onDeleteConfirm() {
+        bdt_crudDeleteAction('@(ViewBag.DeleteConfirmation)', '@(ViewBag.DeleteUrl)', '@(ViewBag.DeleteSuccessUrl)', '@(ViewBag.DeleteErrorMessage)');
+    }
+    </script>
+}
+
+@using (Html.BeginForm())
+{
+    <div class="editor-content-column">
+        <h2>@ViewBag.Title</h2>
+
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary()
+
+        <fieldset>
+            <legend>@Html.LabelForModel()</legend>
+
+            [MODEL_EDIT_PROPERTIES]
+            
+            <div>
+                @Html.RenderAudit()
+            </div>
+        </fieldset>
+    </div>
+    <div class="editor-action-column">
+        @Html.SaveButton()
+        @Html.DeleteButton(!(bool)ViewBag.DeleteEnabled, "onDeleteConfirm")
+        @Html.CancelToIndex()
+        <br />
+        <br />
+        @Html.ListLink()
+    </div>
+}

@@ -1,0 +1,24 @@
+﻿<h2>
+    @ViewBag.Title
+</h2>
+<p>@(Html.HelpTextForModel<I[MODEL]>())</p>
+<section class="column-width-900">
+    @(Html.ByDesignGrid(() => Html.Kendo().Grid<I[MODEL]>()
+        .Name("[mODEL]Grid")
+            .Columns(columns =>
+            {
+                [MODEL_INDEX_PROPERTIES]
+                
+            })
+        .ToolBar(
+            toolbar => toolbar.Custom().Name(Html.TranslationString("ADD_A_[MODEL_UPPER]", "Add a [MODEL_DISPLAYNAME_SINGULAR]")).Action("Create", "[MODEL]"))
+        .DataSource(dataSource => dataSource
+                    .Ajax()
+                    .PageSize(20)
+                    .Model(model => model.Id(m => m.ID))
+                    .Events(events => events.Error("kendo_error_handler"))
+                    .Read(read => read.Action("Get", "[MODEL]"))
+                    [SORT]
+                    )
+     ))
+</section>

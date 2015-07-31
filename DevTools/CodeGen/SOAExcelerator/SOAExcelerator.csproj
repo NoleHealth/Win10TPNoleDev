@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{45063700-4EF9-4798-84B7-58402444D420}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ByDesign.Excelerator</RootNamespace>
+    <AssemblyName>Excelerator9001</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>ByDesign.Excelerator.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Excel_Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Excel, Version=2.1.2.3, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.2.1.2.3\lib\net45\Excel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\Model.cs" />
+    <Compile Include="Classes\CodeFile.cs" />
+    <Compile Include="Classes\PropertiesColumns.cs" />
+    <Compile Include="Classes\PropertyAPIAccessType.cs" />
+    <Compile Include="Classes\PropertyBOAccessType.cs" />
+    <Compile Include="Classes\PropertyServiceAccessType.cs" />
+    <Compile Include="Classes\Rule.cs" />
+    <Compile Include="Classes\ServiceAccess.cs" />
+    <Compile Include="Classes\ShowInCrudGridType.cs" />
+    <Compile Include="Classes\SqlColumn.cs" />
+    <Compile Include="Classes\TranslatableText.cs" />
+    <Compile Include="Core\DesignTimeHelper.cs" />
+    <Compile Include="Core\StringExtentions.cs" />
+    <Compile Include="Classes\Property.cs" />
+    <Compile Include="Classes\Srd.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ExcelReader.cs" />
+    <Content Include="Templates\SkeletonService\SOAFramework\Applications\Web\BackOffice2\Areas\AREA\REGAreaRegistration.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\SkeletonService\SOAFramework\Testing\Services\ByDesign.SOA.Testing.Services\AREA\MODELServiceTest.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\SkeletonService\SOAFramework\Testing\Services\ByDesign.SOA.Testing.Services\AREA\MODELRepositoryTest.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\SkeletonService\SOAFramework\Data\ByDesign.Data.Repositories\AREA\MODELRepository.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\SkeletonService\SOAFramework\Data\ByDesign.Data.Interfaces\AREA\IMODELRepository.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\SkeletonService\SOAFramework\Common\ByDesign.Common.Models\AREA\MODEL.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\SkeletonService\SOAFramework\Common\ByDesign.Common.IModels\AREA\IMODEL.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\SkeletonService\SOAFramework\Business\ByDesign.Business.Services\AREA\MODELService.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\SkeletonService\SOAFramework\Business\ByDesign.Business.Interfaces\AREA\IMODELService.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\SkeletonService\SOAFramework\Applications\Web\BackOffice2\Areas\AREA\Controllers\MODELController.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\ManualCrudUI\SOAFramework\Applications\Web\BackOffice2\Areas\AREA\Controllers\MODELController.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\ManualCrudUI\SOAFramework\Applications\Web\ByDesign.SOA.Applications.WebAPI\Areas\AREA\Controllers\MODELController.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\ManualCrudUI\SOAFramework\Business\ByDesign.Business.Interfaces\AREA\IMODELService.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\ManualCrudUI\SOAFramework\Business\ByDesign.Business.Services\AREA\MODELService.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\ManualCrudUI\SOAFramework\Common\ByDesign.Common.IModels\AREA\IMODEL.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\ManualCrudUI\SOAFramework\Common\ByDesign.Common.Models\AREA\MODEL.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\ManualCrudUI\SOAFramework\Data\ByDesign.Data.Interfaces\AREA\IMODELRepository.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\ManualCrudUI\SOAFramework\Data\ByDesign.Data.Repositories\AREA\MODELRepository.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\ManualCrudUI\SOAFramework\Testing\Applications\Web\ByDesign.SOA.Testing.Applications.WebAPI\AREA\MODELAPIControllerTest.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\ManualCrudUI\SOAFramework\Testing\Services\ByDesign.SOA.Testing.Services\AREA\MODELRepositoryTest.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\ManualCrudUI\SOAFramework\Testing\Services\ByDesign.SOA.Testing.Services\AREA\MODELServiceTest.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\CrudinatorUI\SOAFramework\Applications\Web\BackOffice2\Areas\AREA\Controllers\MODELController.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\CrudinatorUI\SOAFramework\Applications\Web\ByDesign.SOA.Applications.WebAPI\Areas\AREA\Controllers\MODELController.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\CrudinatorUI\SOAFramework\Business\ByDesign.Business.Interfaces\AREA\IMODELService.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\CrudinatorUI\SOAFramework\Business\ByDesign.Business.Services\AREA\MODELService.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\CrudinatorUI\SOAFramework\Common\ByDesign.Common.IModels\AREA\IMODEL.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\CrudinatorUI\SOAFramework\Common\ByDesign.Common.Models\AREA\MODEL.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\CrudinatorUI\SOAFramework\Data\ByDesign.Data.Interfaces\AREA\IMODELRepository.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\CrudinatorUI\SOAFramework\Data\ByDesign.Data.Repositories\AREA\MODELRepository.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\CrudinatorUI\SOAFramework\Testing\Applications\Web\ByDesign.SOA.Testing.Applications.WebAPI\AREA\MODELAPIControllerTest.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\CrudinatorUI\SOAFramework\Testing\Services\ByDesign.SOA.Testing.Services\AREA\MODELRepositoryTest.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\CrudinatorUI\SOAFramework\Testing\Services\ByDesign.SOA.Testing.Services\AREA\MODELServiceTest.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="packages.config" />
+    <Content Include="Properties\DataSources\ByDesign.Excelerator.Classes.Srd.datasource">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\ManualCrudUI\SOAFramework\SQL\Procs\spMODEL_IsDeletable.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\ManualCrudUI\SOAFramework\SQL\Rollout Scripts\PW TICKET - SOA MODEL.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\ReadOnlyService\SOAFramework\Applications\Web\BackOffice2\Areas\AREA\Controllers\MODELController.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\ReadOnlyService\SOAFramework\Applications\Web\ByDesign.SOA.Applications.WebAPI\Areas\AREA\Controllers\MODELController.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\ReadOnlyService\SOAFramework\Business\ByDesign.Business.Interfaces\AREA\IMODELService.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\ReadOnlyService\SOAFramework\Business\ByDesign.Business.Services\AREA\MODELService.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\ReadOnlyService\SOAFramework\Common\ByDesign.Common.IModels\AREA\IMODEL.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\ReadOnlyService\SOAFramework\Common\ByDesign.Common.Models\AREA\MODEL.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\ReadOnlyService\SOAFramework\Data\ByDesign.Data.Interfaces\AREA\IMODELRepository.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\ReadOnlyService\SOAFramework\Data\ByDesign.Data.Repositories\AREA\MODELRepository.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\ReadOnlyService\SOAFramework\Testing\Applications\Web\ByDesign.SOA.Testing.Applications.WebAPI\AREA\MODELAPIControllerTest.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\ReadOnlyService\SOAFramework\Testing\Services\ByDesign.SOA.Testing.Services\AREA\MODELRepositoryTest.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\ReadOnlyService\SOAFramework\Testing\Services\ByDesign.SOA.Testing.Services\AREA\MODELServiceTest.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Excel_Icon.ico" />
+    <Content Include="Templates\ReadOnlyService\SOAFramework\SQL\Rollout Scripts\PW TICKET - SOA MODEL.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\CrudinatorUI\SOAFramework\SQL\Procs\spMODEL_IsDeletable.sql" />
+    <Content Include="Templates\CrudinatorUI\SOAFramework\SQL\Rollout Scripts\PW TICKET - SOA MODEL.sql" />
+    <Content Include="TODO.txt" />
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Content Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </Content>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Nugets.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Templates\ReadOnlyService\SOAFramework\SQL\Procs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Templates\ManualCrudUI\SOAFramework\Applications\Web\BackOffice2\Areas\AREA\Views\MODEL\Create.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\ManualCrudUI\SOAFramework\Applications\Web\BackOffice2\Areas\AREA\Views\MODEL\Edit.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\ManualCrudUI\SOAFramework\Applications\Web\BackOffice2\Areas\AREA\Views\MODEL\Index.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Templates\NextSteps.rtf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Classes\ClassDiagram1.cd" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

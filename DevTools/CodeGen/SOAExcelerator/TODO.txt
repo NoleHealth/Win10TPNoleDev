@@ -1,0 +1,21 @@
+﻿
+***Copy and add.
+
+**Where is Singular Model Name?
+
+
+
+Fix CRUD/View Template
+
+
+all editable on summary page
+
+detail page read only
+
+AdminOnly looks wrong on Properties Grid. All FLase;
+Identity not working
+
+Mimic style/layout of Time Tracker or git extractor
+
+Buttons state.  set enabled/disabled based on state.
+

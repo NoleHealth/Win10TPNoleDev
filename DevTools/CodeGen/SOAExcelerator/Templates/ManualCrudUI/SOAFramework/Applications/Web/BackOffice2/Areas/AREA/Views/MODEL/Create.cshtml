@@ -1,0 +1,24 @@
+﻿@model ByDesign.SOA.Common.IModels.[AREA].I[MODEL]
+@using (Html.BeginForm())
+{
+    <div class="editor-content-column">
+        <h2>@ViewBag.Title</h2>
+
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        <fieldset>
+            <legend>@Html.LabelForModel()</legend>
+
+            [MODEL_CREATE_PROPERTIES]
+        </fieldset>
+
+    </div>
+    <div class="editor-action-column">
+        @Html.CreateButton()
+        @Html.CancelToIndex()
+        <br />
+        <br />
+        @Html.ListLink()
+    </div>
+}
