@@ -1,0 +1,234 @@
+﻿<Page
+    x:Class="MOS.CodeGallery10.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MOS.CodeGallery10.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    
+    xmlns:vm="using:MOS.CodeGallery10.ViewModels"
+    xmlns:controls="using:Template10.Controls"
+    xmlns:Interactivity="using:Microsoft.Xaml.Interactivity" 
+    xmlns:Behaviors="using:Template10.Behaviors" 
+    xmlns:Core="using:Microsoft.Xaml.Interactions.Core"
+    
+    xmlns:data="using:MOS.CodeGallery10.Models"
+    
+     xmlns:dataSources="using:MOS.CodeGallery10.Data.DataSources"
+    
+    mc:Ignorable="d">
+
+    <Page.DataContext>
+        <vm:MainPageViewModel />
+    </Page.DataContext>
+
+    <Page.Resources>
+        <!--#region DataTemplate-->
+        <!-- When using x:Bind, you need to set x:DataType -->
+        <!-- Use a collection view source for content that presents itself as a list of items that can be grouped or sorted.  Otherwise, you can use x:Bind
+        directly on the GridView's item source to for further optimization. Please see the AppUIBasics sample for an example of how to do this.  -->
+        <!--<CollectionViewSource x:Name="ContactsCVS"  IsSourceGrouped="True" />-->
+
+        <CollectionViewSource x:Name="cvsGroups"  IsSourceGrouped="True" Source="{x:Bind ViewModel.Groups}"
+                               ItemsPath="Items"
+                              d:Source="{Binding Groups, Source={d:DesignData Source=/Data/DesignTimeData/GalleryData.json, Type=dataSources:GalleryDataSource}}"
+                              />
+        <!--d:Source="{Binding Groups, Source={d:DesignData Source=/DataModel/ControlInfoData.json, Type=data:ControlInfoDataSource}}"/>-->
+
+        <!--#region DataTemplate-->
+        <!-- When using x:Bind, you need to set x:DataType -->
+        <!--Click="{x:Bind ViewModel.GotoPage, Mode=OneWay}"-->
+        <DataTemplate x:Name="GalleryItemGridViewTemplate" x:DataType="data:GalleryItem">
+            <!---->
+            <Border Padding="0,0,0,0" Margin="4,0" HorizontalAlignment="Center" VerticalAlignment="Center" Height="140px" Width="140px" BorderBrush="LightGray">
+                
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Ellipse x:Name="Ellipse" 
+                             Width ="50"
+                             Height="50"
+                             VerticalAlignment="Center"
+                             HorizontalAlignment="Center"
+                             Fill="LightBlue"
+                             Margin="4,4,4,4"/>
+                    <!-- Phase 2: TextBlock with contact name-->
+            <TextBlock x:Name="tbTitle" 
+                               Margin="4,4,0,4"
+                               Text="{x:Bind Title}" 
+                               x:Phase="2" 
+                               Style="{ThemeResource BodyTextBlockStyle}" 
+                               HorizontalAlignment="Center"
+                           
+                           />
+            <!-- Phase 3: TextBlock with contact job title-->
+            <TextBlock x:Name="tbSubtitle" 
+                               Text="{x:Bind Subtitle}" 
+                               Margin="4,4,0,4"
+                               x:Phase="3" 
+                               Style="{ThemeResource BodyTextBlockStyle}"
+                               Foreground="Gray"
+                               HorizontalAlignment="Center"
+                           
+                           />
+            </StackPanel>
+
+            </Border>
+        </DataTemplate>
+        <DataTemplate x:Name="GalleryItemListViewTemplate" x:DataType="data:GalleryItem">
+            <!---->
+            <Grid HorizontalAlignment="Left">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Ellipse x:Name="Ellipse"
+                         Grid.RowSpan="2"
+                         Width ="28"
+                         Height="28"
+                         Margin="6"
+                         VerticalAlignment="Center"
+                         HorizontalAlignment="Center"
+                         Fill="LightBlue"/>
+                <TextBlock Grid.Column="1"
+                           Text="{x:Bind Title}" 
+                           x:Phase="1"  
+                           Style="{ThemeResource BaseTextBlockStyle}"
+                           Margin="12,6,0,0"/>
+                <TextBlock  Grid.Column="1"
+                            Grid.Row="1"
+                            Text="{x:Bind Subtitle}" 
+                            x:Phase="2"
+                            Style="{ThemeResource BodyTextBlockStyle}"
+                            Margin="12,0,0,6"/>
+            </Grid>
+        </DataTemplate>
+        <ItemsPanelTemplate x:Key="ItemsPanelTemplate1">
+            <ItemsWrapGrid Orientation="Horizontal" />
+        </ItemsPanelTemplate>
+        <ItemsPanelTemplate x:Key="ItemsPanelTemplate2">
+            <ItemsStackPanel Orientation="Vertical" HorizontalAlignment="Left"/>
+            
+        </ItemsPanelTemplate>
+        <!--#endregion-->
+    </Page.Resources>
+    <Page.TopAppBar>
+        <CommandBar ClosedDisplayMode="Minimal">
+            <CommandBar.PrimaryCommands>
+                <controls:BackAppBarButton Frame="{x:Bind Frame}" />
+                <controls:ForwardAppBarButton Frame="{x:Bind Frame}" />
+                <AppBarButton Label="Path" >
+                    <AppBarButton.Icon>
+                        <PathIcon HorizontalAlignment="Center" VerticalAlignment="Center" Data="M9.99967861175537,0L15.0010814666748,4.41280698776245 20,8.82655048370361 13.8758192062378,8.82655048370361 13.8758192062378,20 6.12418174743652,20 6.12418174743652,8.82655048370361 0,8.82655048370361 4.9995322227478,4.41280698776245 9.99967861175537,0z" />
+                    </AppBarButton.Icon>
+                </AppBarButton>
+
+                <AppBarButton Label="FontIcon" >
+                    <AppBarButton.Icon>
+                        <FontIcon FontFamily="Candara" Glyph="Σ"/>
+                    </AppBarButton.Icon>
+                </AppBarButton>
+            </CommandBar.PrimaryCommands>
+        </CommandBar>
+
+
+
+    </Page.TopAppBar>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" 
+          BorderBrush="{ThemeResource ApplicationSecondaryForegroundThemeBrush}" BorderThickness="0,12,0,0">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="WindowStates">
+
+                
+                <VisualState x:Name="NarrowState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="1"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="gv1.ItemsPanel" Value="{StaticResource ItemsPanelTemplate2}" />
+                        <Setter Target="gv1.ItemTemplate" Value="{StaticResource GalleryItemListViewTemplate}" />
+
+
+
+                    </VisualState.Setters>
+                </VisualState>
+
+
+                <VisualState x:Name="WideState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="1000"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="gv1.ItemsPanel" Value="{StaticResource ItemsPanelTemplate1}" />
+                        <Setter Target="gv1.ItemTemplate" Value="{StaticResource GalleryItemGridViewTemplate}" />
+
+
+                    </VisualState.Setters>
+                </VisualState>
+
+
+
+                <VisualState x:Name="MediumState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="660"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="gv1.ItemsPanel" Value="{StaticResource ItemsPanelTemplate1}" />
+                        <Setter Target="gv1.ItemTemplate" Value="{StaticResource GalleryItemGridViewTemplate}" />
+
+                    </VisualState.Setters>
+                </VisualState>
+
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60" />
+
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <!-- header -->
+        <controls:PageHeader Text="Settings" Grid.Row="0" />
+
+        <!--#region content-->
+
+
+        <!--<GridView x:Name="Control1" ItemsSource="{x:Bind ViewModel.Groups}"
+                          ItemTemplate="{StaticResource TextTemplate}"
+                          CanDragItems="{x:Bind ViewModel.CanDragItems, Mode=OneWay}" 
+                          IsItemClickEnabled="{x:Bind ViewModel.IsItemClickEnabled, Mode=OneWay}" 
+                          IsSwipeEnabled="{x:Bind ViewModel.IsSwipeEnabled, Mode=OneWay}"
+                          SelectionChanged="Control1_SelectionChanged" ItemClick="Control1_ItemClick" 
+                      />-->
+
+        <GridView x:Name="gv1" Grid.Row="1" Padding="12,0,0,0" ItemsSource="{x:Bind cvsGroups.View}" 
+                  SelectedItem="{x:Bind ViewModel.SelectedGalleryItemObject, Mode=TwoWay}"
+                   SelectionMode="Single"
+                  ItemTemplate="{StaticResource GalleryItemGridViewTemplate}"
+                  CanDragItems="{x:Bind ViewModel.CanDragItems, Mode=OneWay}" 
+                          IsItemClickEnabled="{x:Bind ViewModel.IsItemClickEnabled, Mode=OneWay}" 
+                          IsSwipeEnabled="{x:Bind ViewModel.IsSwipeEnabled, Mode=OneWay}" ItemsPanel="{StaticResource ItemsPanelTemplate1}" Margin="0,12,0,-12"
+                      
+                  >
+            <GridView.GroupStyle>
+                <GroupStyle >
+                    <GroupStyle.HeaderTemplate>
+                        <DataTemplate x:DataType="data:GalleryItemGroup">
+                            <TextBlock Text="{x:Bind Title}" 
+                                       Style="{ThemeResource TitleTextBlockStyle}"/>
+                        </DataTemplate>
+                    </GroupStyle.HeaderTemplate>
+                </GroupStyle>
+            </GridView.GroupStyle>
+        </GridView>
+
+
+
+
+        <!--#endregion-->
+
+    </Grid>
+</Page>
