@@ -1,0 +1,46 @@
+﻿<Page
+    x:Class="MOS.CodeGallery10.Views.NavHostPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MOS.CodeGallery10.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    
+    xmlns:vm="using:MOS.CodeGallery10.ViewModels"
+    xmlns:controls="using:Template10.Controls"
+    xmlns:Interactivity="using:Microsoft.Xaml.Interactivity" 
+    xmlns:Behaviors="using:Template10.Behaviors" 
+    xmlns:Core="using:Microsoft.Xaml.Interactions.Core"
+    >
+
+    <Page.DataContext>
+        <vm:NavHostPageViewModel />
+    </Page.DataContext>
+
+    <Page.TopAppBar>
+        <CommandBar ClosedDisplayMode="Minimal">
+            <CommandBar.PrimaryCommands>
+                <controls:BackAppBarButton Frame="{x:Bind Frame}" />
+                <controls:ForwardAppBarButton Frame="{x:Bind Frame}" />
+            </CommandBar.PrimaryCommands>
+        </CommandBar>
+    </Page.TopAppBar>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+		BorderBrush="{ThemeResource ApplicationSecondaryForegroundThemeBrush}" BorderThickness="0,12,0,0">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <!-- header -->
+        <controls:PageHeader Text="{x:Bind ViewModel.Value}" Grid.Row="0" />
+
+        <StackPanel Grid.Row="1" Padding="12,0,0,0">
+            <TextBlock Text="{x:Bind ViewModel.Value}" Style="{StaticResource TitleTextBlockStyle}" />
+        </StackPanel>
+
+    </Grid>
+</Page>

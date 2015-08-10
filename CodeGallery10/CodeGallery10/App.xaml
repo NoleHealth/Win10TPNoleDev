@@ -1,0 +1,13 @@
+﻿<common:BootStrapper
+    x:Class="MOS.CodeGallery10.App"
+    xmlns:common="using:Template10.Common" 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    
+    RequestedTheme="Light">
+
+    <common:BootStrapper.Resources>
+        <ResourceDictionary Source="Styles\Custom.xaml" />
+    </common:BootStrapper.Resources>
+
+</common:BootStrapper>

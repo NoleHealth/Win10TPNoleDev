@@ -1,0 +1,154 @@
+﻿{
+  "Groups": [
+    {
+      "UniqueId": "1",
+      "Title": "TitleGP",
+      "Subtitle": "SubtitleGP",
+      "Description": "DescriptionGP",
+      "ImagePath": "ImagePathGP",
+      "Items": [
+        {
+          "RelatedGalleryItem": null,
+          "TargetUri": "MOS.CodeGallery10.Views.NavHostPage, CodeGallery10",
+          "TargetParamaters": "System",
+          "UniqueId": "1",
+          "Title": "System",
+          "Subtitle": "Display, notifications, apps, power",
+          "Description": "Description",
+          "ImagePath": "ImagePath",
+          "Content": "Content",
+          "RelatedItems": [ ]
+        },
+        {
+          "RelatedGalleryItem": null,
+          "TargetUri": "MOS.CodeGallery10.Views.NavHostPage, CodeGallery10",
+          "TargetParamaters": "Devices",
+          "UniqueId": "5",
+          "Title": "Devices",
+          "Subtitle": "Bluetooth, printers, mouse",
+          "Description": "Description2",
+          "ImagePath": "ImagePath2",
+          "Content": "Content2",
+          "RelatedItems": [ ]
+        },
+        {
+          "RelatedGalleryItem": null,
+          "TargetUri": "MOS.CodeGallery10.Views.NavHostPage, CodeGallery10",
+          "TargetParamaters": "NetworkAndInternet",
+          "UniqueId": "3",
+          "Title": "Network n Internet",
+          "Subtitle": "Wi-Fi, airplane mode, VPN",
+          "Description": "Description3",
+          "ImagePath": "ImagePath3",
+          "Content": "Content3",
+          "RelatedItems": [ ]
+        },
+        {
+          "RelatedGalleryItem": null,
+          "TargetUri": "MOS.CodeGallery10.Views.NavHostPage, CodeGallery10",
+          "TargetParamaters": "System",
+          "UniqueId": "101",
+          "Title": "System 2",
+          "Subtitle": "Display, notifications, apps, power",
+          "Description": "Description",
+          "ImagePath": "ImagePath",
+          "Content": "Content",
+          "RelatedItems": [ ]
+        },
+        {
+          "RelatedGalleryItem": null,
+          "TargetUri": "MOS.CodeGallery10.Views.NavHostPage, CodeGallery10",
+          "TargetParamaters": "Devices",
+          "UniqueId": "105",
+          "Title": "Devices 2",
+          "Subtitle": "Bluetooth, printers, mouse",
+          "Description": "Description2",
+          "ImagePath": "ImagePath2",
+          "Content": "Content2",
+          "RelatedItems": [ ]
+        },
+        {
+          "RelatedGalleryItem": null,
+          "TargetUri": "MOS.CodeGallery10.Views.NavHostPage, CodeGallery10",
+          "TargetParamaters": "NetworkAndInternet",
+          "UniqueId": "103",
+          "Title": "Network n Internet 2",
+          "Subtitle": "Wi-Fi, airplane mode, VPN",
+          "Description": "Description3",
+          "ImagePath": "ImagePath3",
+          "Content": "Content3",
+          "RelatedItems": [ ]
+        },
+         {
+          "RelatedGalleryItem": null,
+          "TargetUri": "MOS.CodeGallery10.Views.NavHostPage, CodeGallery10",
+          "TargetParamaters": "System",
+          "UniqueId": "201",
+          "Title": "System 3",
+          "Subtitle": "Display, notifications, apps, power",
+          "Description": "Description",
+          "ImagePath": "ImagePath",
+          "Content": "Content",
+          "RelatedItems": [ ]
+        },
+        {
+          "RelatedGalleryItem": null,
+          "TargetUri": "MOS.CodeGallery10.Views.NavHostPage, CodeGallery10",
+          "TargetParamaters": "Devices",
+          "UniqueId": "205",
+          "Title": "Devices 3",
+          "Subtitle": "Bluetooth, printers, mouse",
+          "Description": "Description2",
+          "ImagePath": "ImagePath2",
+          "Content": "Content2",
+          "RelatedItems": [ ]
+        },
+        {
+          "RelatedGalleryItem": null,
+          "TargetUri": "MOS.CodeGallery10.Views.NavHostPage, CodeGallery10",
+          "TargetParamaters": "NetworkAndInternet",
+          "UniqueId": "203",
+          "Title": "Network n Internet 3",
+          "Subtitle": "Wi-Fi, airplane mode, VPN",
+          "Description": "Description3",
+          "ImagePath": "ImagePath3",
+          "Content": "Content3",
+          "RelatedItems": [ ]
+        }
+      ]
+    },
+    {
+      "UniqueId": "2",
+      "Title": "TitleGP2",
+      "Subtitle": "SubtitleGP2",
+      "Description": "DescriptionGP2",
+      "ImagePath": "ImagePathGP2",
+      "Items": [
+        {
+          "RelatedGalleryItem": null,
+          "TargetUri": "MOS.CodeGallery10.Views.NavHostPage, CodeGallery10",
+          "TargetParamaters": "Personalization",
+          "UniqueId": "4",
+          "Title": "Personalization",
+          "Subtitle": "Background, lock screen, colors",
+          "Description": "Description4",
+          "ImagePath": "ImagePath4",
+          "Content": "Content4",
+          "RelatedItems": [ ]
+        },
+        {
+          "RelatedGalleryItem": null,
+          "TargetUri": "MOS.CodeGallery10.Views.NavHostPage, CodeGallery10",
+          "TargetParamaters": "Accounts",
+          "UniqueId": "5",
+          "Title": "Accounts",
+          "Subtitle": "Subtitle5",
+          "Description": "Description5",
+          "ImagePath": "ImagePath5",
+          "Content": "Content5",
+          "RelatedItems": [ ]
+        }
+      ]
+    }
+  ]
+}

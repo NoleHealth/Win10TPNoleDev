@@ -1,0 +1,82 @@
+﻿{
+  "Groups": [
+    {
+      "UniqueId": "1",
+      "Title": "TitleGP",
+      "Subtitle": "SubtitleGP",
+      "Description": "DescriptionGP",
+      "ImagePath": "ImagePathGP",
+      "Items": [
+        {
+          "RelatedGalleryItem": null,
+          "TargetUri": "TargetUri",
+          "TargetParamaters": "TargetParams",
+          "UniqueId": "1",
+          "Title": "Title",
+          "Subtitle": "Subtitle",
+          "Description": "Description",
+          "ImagePath": "ImagePath",
+          "Content": "Content",
+          "RelatedItems": [ ]
+        },
+        {
+          "RelatedGalleryItem": null,
+          "TargetUri": "TargetUri2",
+          "TargetParamaters": "TargetParams2",
+          "UniqueId": "5",
+          "Title": "Title2",
+          "Subtitle": "Subtitle2",
+          "Description": "Description2",
+          "ImagePath": "ImagePath2",
+          "Content": "Content2",
+          "RelatedItems": [ ]
+        },
+        {
+          "RelatedGalleryItem": null,
+          "TargetUri": "TargetUri3",
+          "TargetParamaters": "TargetParams3",
+          "UniqueId": "3",
+          "Title": "Title3",
+          "Subtitle": "Subtitle3",
+          "Description": "Description3",
+          "ImagePath": "ImagePath3",
+          "Content": "Content3",
+          "RelatedItems": [ ]
+        }
+      ]
+    },
+    {
+      "UniqueId": "2",
+      "Title": "TitleGP2",
+      "Subtitle": "SubtitleGP2",
+      "Description": "DescriptionGP2",
+      "ImagePath": "ImagePathGP2",
+      "Items": [
+        {
+          "RelatedGalleryItem": null,
+          "TargetUri": "TargetUri4",
+          "TargetParamaters": "TargetParams4",
+          "UniqueId": "4",
+          "Title": "Title4",
+          "Subtitle": "Subtitle4",
+          "Description": "Description4",
+          "ImagePath": "ImagePath4",
+          "Content": "Content4",
+          "RelatedItems": [ ]
+        },
+        {
+          "RelatedGalleryItem": null,
+          "TargetUri": "TargetUri5",
+          "TargetParamaters": "TargetParams5",
+          "UniqueId": "5",
+          "Title": "Title5",
+          "Subtitle": "Subtitle5",
+          "Description": "Description5",
+          "ImagePath": "ImagePath5",
+          "Content": "Content5",
+          "RelatedItems": [ ]
+        }
+      ]
+    }
+  ]
+}
