@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MOS.CodeGallery10.Core
 {
-    public enum NavigationTypes
+    public enum NavigationStyles
     {
         None,
         Gallery,

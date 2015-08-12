@@ -54,7 +54,7 @@ namespace MOS.CodeGallery10.ViewModels
                 if (ps[0] == "NavHost")
                 {
                     Value = ps[1];
-                    _model = await NavigationDataSource.GetNavigationGroupsAsync(ps[1]);
+                    //_model = await NavigationDataSource.GetNavigationGroupsAsync(ps[1]);
                     _navGroups = await NavigationDataSource.GetNavigationGroupsAsync(ps[1]);
                     
                     return;
