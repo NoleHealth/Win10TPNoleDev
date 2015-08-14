@@ -93,6 +93,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Common\ReadMe.txt" />
     <Content Include="DataModel\ControlInfoData.json" />
     <Content Include="Data\DesignTimeData\GalleryData.json" />
     <Content Include="Data\DemoData\GalleryData.json" />
@@ -105,6 +106,21 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Common\BooleanNegationConverter.cs" />
+    <Compile Include="Common\BooleanToVisibilityConverter.cs" />
+    <Compile Include="Common\ColorStringConverter.cs" />
+    <Compile Include="Common\ComboBoxItemToStringConverter.cs" />
+    <Compile Include="Common\DoubleToIntConverter.cs" />
+    <Compile Include="Common\NavigationHelper.cs" />
+    <Compile Include="Common\NullableBooleanToBooleanConverter.cs" />
+    <Compile Include="Common\ObservableDictionary.cs" />
+    <Compile Include="Common\OrientedSize.cs" />
+    <Compile Include="Common\RelayCommand.cs" />
+    <Compile Include="Common\StringToBrushConverter.cs" />
+    <Compile Include="Common\SuspensionManager.cs" />
+    <Compile Include="Common\ValueToFontFamilyConverter.cs" />
+    <Compile Include="Common\ValueToStringConverter.cs" />
+    <Compile Include="Common\WrapPanel.cs" />
     <Compile Include="Core\NavigationStyles.cs" />
     <Compile Include="Data\DataSources\NavigationDataSource.cs" />
     <Compile Include="Data\DataSources\GalleryDataSource.cs" />

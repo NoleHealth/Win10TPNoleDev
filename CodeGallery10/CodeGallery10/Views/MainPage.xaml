@@ -17,24 +17,20 @@
      xmlns:dataSources="using:MOS.CodeGallery10.Data.DataSources"
     
     mc:Ignorable="d">
-
     <Page.DataContext>
         <vm:MainPageViewModel />
     </Page.DataContext>
-
     <Page.Resources>
         <!--#region DataTemplate-->
         <!-- When using x:Bind, you need to set x:DataType -->
         <!-- Use a collection view source for content that presents itself as a list of items that can be grouped or sorted.  Otherwise, you can use x:Bind
         directly on the GridView's item source to for further optimization. Please see the AppUIBasics sample for an example of how to do this.  -->
         <!--<CollectionViewSource x:Name="ContactsCVS"  IsSourceGrouped="True" />-->
-
         <CollectionViewSource x:Name="cvsGroups"  IsSourceGrouped="True" Source="{x:Bind ViewModel.Groups}"
                                ItemsPath="Items"
                               d:Source="{Binding Groups, Source={d:DesignData Source=/Data/DesignTimeData/GalleryData.json, Type=dataSources:GalleryDataSource}}"
                               />
         <!--d:Source="{Binding Groups, Source={d:DesignData Source=/DataModel/ControlInfoData.json, Type=data:ControlInfoDataSource}}"/>-->
-
         <!--#region DataTemplate-->
         <!-- When using x:Bind, you need to set x:DataType -->
         <!--Click="{x:Bind ViewModel.GotoPage, Mode=OneWay}"-->
@@ -70,7 +66,6 @@
                            
                            />
             </StackPanel>
-
             </Border>
         </DataTemplate>
         <DataTemplate x:Name="GalleryItemListViewTemplate" x:DataType="data:GalleryItem">
@@ -110,7 +105,6 @@
         </ItemsPanelTemplate>
         <ItemsPanelTemplate x:Key="ItemsPanelTemplate2">
             <ItemsStackPanel Orientation="Vertical" HorizontalAlignment="Left"/>
-            
         </ItemsPanelTemplate>
         <!--#endregion-->
     </Page.Resources>
@@ -124,7 +118,6 @@
                         <PathIcon HorizontalAlignment="Center" VerticalAlignment="Center" Data="M9.99967861175537,0L15.0010814666748,4.41280698776245 20,8.82655048370361 13.8758192062378,8.82655048370361 13.8758192062378,20 6.12418174743652,20 6.12418174743652,8.82655048370361 0,8.82655048370361 4.9995322227478,4.41280698776245 9.99967861175537,0z" />
                     </AppBarButton.Icon>
                 </AppBarButton>
-
                 <AppBarButton Label="FontIcon" >
                     <AppBarButton.Icon>
                         <FontIcon FontFamily="Candara" Glyph="Σ"/>
@@ -132,17 +125,16 @@
                 </AppBarButton>
             </CommandBar.PrimaryCommands>
         </CommandBar>
-
-
-
     </Page.TopAppBar>
-
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" 
-          BorderBrush="{ThemeResource ApplicationSecondaryForegroundThemeBrush}" BorderThickness="0,12,0,0">
+          BorderBrush="{ThemeResource ApplicationSecondaryForegroundThemeBrush}" BorderThickness="4,12,4,4">
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="WindowStates">
-
-                
                 <VisualState x:Name="NarrowState">
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger MinWindowWidth="1"/>
@@ -150,13 +142,8 @@
                     <VisualState.Setters>
                         <Setter Target="gv1.ItemsPanel" Value="{StaticResource ItemsPanelTemplate2}" />
                         <Setter Target="gv1.ItemTemplate" Value="{StaticResource GalleryItemListViewTemplate}" />
-
-
-
                     </VisualState.Setters>
                 </VisualState>
-
-
                 <VisualState x:Name="WideState">
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger MinWindowWidth="1000"/>
@@ -164,13 +151,8 @@
                     <VisualState.Setters>
                         <Setter Target="gv1.ItemsPanel" Value="{StaticResource ItemsPanelTemplate1}" />
                         <Setter Target="gv1.ItemTemplate" Value="{StaticResource GalleryItemGridViewTemplate}" />
-
-
                     </VisualState.Setters>
                 </VisualState>
-
-
-
                 <VisualState x:Name="MediumState">
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger MinWindowWidth="660"/>
@@ -178,24 +160,17 @@
                     <VisualState.Setters>
                         <Setter Target="gv1.ItemsPanel" Value="{StaticResource ItemsPanelTemplate1}" />
                         <Setter Target="gv1.ItemTemplate" Value="{StaticResource GalleryItemGridViewTemplate}" />
-
                     </VisualState.Setters>
                 </VisualState>
-
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
         <Grid.RowDefinitions>
             <RowDefinition Height="60" />
-
             <RowDefinition />
         </Grid.RowDefinitions>
-
         <!-- header -->
         <controls:PageHeader Text="Settings" Grid.Row="0" />
-
         <!--#region content-->
-
-
         <!--<GridView x:Name="Control1" ItemsSource="{x:Bind ViewModel.Groups}"
                           ItemTemplate="{StaticResource TextTemplate}"
                           CanDragItems="{x:Bind ViewModel.CanDragItems, Mode=OneWay}" 
@@ -203,16 +178,30 @@
                           IsSwipeEnabled="{x:Bind ViewModel.IsSwipeEnabled, Mode=OneWay}"
                           SelectionChanged="Control1_SelectionChanged" ItemClick="Control1_ItemClick" 
                       />-->
-
-        <GridView x:Name="gv1" Grid.Row="1" Padding="12,0,0,0" ItemsSource="{x:Bind cvsGroups.View}" 
+        <GridView x:Name="gv1" Grid.Row="1" Padding="12,0,0,0" 
+                  AutomationProperties.AutomationId="GroupGridView"
+                        AutomationProperties.Name="Grouped Items"
+                  
+                  ItemsSource="{x:Bind cvsGroups.View}" 
                   SelectedItem="{x:Bind ViewModel.SelectedGalleryItemObject, Mode=TwoWay}"
                    SelectionMode="Single"
+                   
+                       
+                        ScrollViewer.VerticalScrollMode="Disabled"
+                        ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                       
+                  
                   ItemTemplate="{StaticResource GalleryItemGridViewTemplate}"
                   CanDragItems="{x:Bind ViewModel.CanDragItems, Mode=OneWay}" 
                           IsItemClickEnabled="{x:Bind ViewModel.IsItemClickEnabled, Mode=OneWay}" 
                           IsSwipeEnabled="{x:Bind ViewModel.IsSwipeEnabled, Mode=OneWay}" ItemsPanel="{StaticResource ItemsPanelTemplate1}" Margin="0,12,0,-12"
                       
                   >
+            <GridView.Transitions>
+                <TransitionCollection>
+                    <EntranceThemeTransition/>
+                </TransitionCollection>
+            </GridView.Transitions>
             <GridView.GroupStyle>
                 <GroupStyle >
                     <GroupStyle.HeaderTemplate>
@@ -224,11 +213,6 @@
                 </GroupStyle>
             </GridView.GroupStyle>
         </GridView>
-
-
-
-
         <!--#endregion-->
-
     </Grid>
 </Page>
