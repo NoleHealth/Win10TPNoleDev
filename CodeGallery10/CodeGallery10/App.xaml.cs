@@ -17,6 +17,8 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 using Template10.Common;
+using MOS.CodeGallery10.Models;
+using MOS.CodeGallery10.Data.DataSources;
 
 namespace MOS.CodeGallery10
 {
@@ -25,32 +27,45 @@ namespace MOS.CodeGallery10
     /// </summary>
     sealed partial class App : BootStrapper
     {
+        AppBootSetting _appBootSettings = null;
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
         /// </summary>
+        /// 
         public App()
         {
-           
+
             InitializeComponent();
-            this.ShowShellBackButton = true;
+
+
         }
 
         public override Task OnInitializeAsync()
         {
             // runs before everything
+            _appBootSettings = AppBootSettingsDataSource.GetAppBootSetting("");
+
+            this.ShowShellBackButton = _appBootSettings.ShowAppBackButtonInTitleBar;
+
             return base.OnInitializeAsync();
+
         }
 
         public override void OnPrelaunch()
         {
             // handle prelaunch
+
         }
 
         public override Task OnStartAsync(StartKind startKind, IActivatedEventArgs args)
         {
             // start the user experience
             NavigationService.Navigate(typeof(MOS.CodeGallery10.Views.MainPage));
+
+
+
+
             return Task.FromResult<object>(null);
         }
     }

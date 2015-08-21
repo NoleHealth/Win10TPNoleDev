@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.UI.Xaml.Controls;
 
-namespace AppUIBasics
+namespace MOS.CodeGallery10
 {
     /// <summary>
     /// The OrientedSize structure is used to abstract the growth direction from

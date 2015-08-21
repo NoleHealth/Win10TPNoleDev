@@ -10,7 +10,7 @@ using Windows.Foundation;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
-namespace AppUIBasics
+namespace MOS.CodeGallery10
 {
     /// <summary>
     /// Positions child elements sequentially from left to right or top to

@@ -8,9 +8,11 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Media;
 using System.Reflection;
 using Windows.UI.Xaml.Controls;
+using MOS.CodeGallery10;
 
-namespace AppUIBasics.Common
+namespace MOS.CodeGallery10.Common
 {
+    //would not compile
     public class StringToBrushConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, string language)

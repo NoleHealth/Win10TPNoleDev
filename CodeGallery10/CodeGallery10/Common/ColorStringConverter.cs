@@ -17,7 +17,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Media;
 
-namespace AppUIBasics.Common
+namespace MOS.CodeGallery10.Common
 {
     /// <summary>
     /// Value converter that translates true to <see cref="Visibility.Visible"/> and false to

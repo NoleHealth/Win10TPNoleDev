@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -55,14 +56,39 @@ namespace WindowsFormsApplication1
 
 
         }
-    }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var abs = new AppBootSetting();
+
+            var serializer = new JavaScriptSerializer();
+            var serializedResult = serializer.Serialize(abs);
+            Debug.Write(serializedResult);
+            //{"ShowAppBackButtonInTitleBar":false}
+            int i = 0;
+            var deserializedResult = serializer.Deserialize<AppBootSetting>(serializedResult);
+            // Produces AppBootSetting
+
+
+            i++;
+
+        }
+    }
+    public class AppBootSetting
+    {
+        public bool ShowAppBackButtonInTitleBar { get; set; } = false;
+        public AppBootSetting()
+        {
+
+
+        }
+    }
     public class GalleryItem
     {
 
 
-      
 
+        
 
         public GalleryItem(String uniqueId, String title, String subtitle, String imagePath, String description, String content
             , String targetUri, String targetParamaters)

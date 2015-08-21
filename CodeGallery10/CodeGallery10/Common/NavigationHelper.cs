@@ -11,7 +11,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 
-namespace AppUIBasics.Common
+namespace MOS.CodeGallery10.Common
 {
     /// <summary>
     /// NavigationManager aids in navigation between pages.  It provides commands used to 
@@ -82,9 +82,11 @@ namespace AppUIBasics.Common
                 if (this.Page.ActualHeight == Window.Current.Bounds.Height &&
                     this.Page.ActualWidth == Window.Current.Bounds.Width)
                 {
+
                     if (ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons"))
                     {
-                        Windows.Phone.UI.Input.HardwareButtons.BackPressed += HardwareButtons_BackPressed;
+                        //would not compile
+                        //Windows.Phone.UI.Input.HardwareButtons.BackPressed += HardwareButtons_BackPressed;
                     }
                     else
                     {
@@ -103,7 +105,8 @@ namespace AppUIBasics.Common
             {
                 if (ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons"))
                 {
-                    Windows.Phone.UI.Input.HardwareButtons.BackPressed -= HardwareButtons_BackPressed;
+                    //would not compile
+                    //Windows.Phone.UI.Input.HardwareButtons.BackPressed -= HardwareButtons_BackPressed;
                 }
                 else
                 {
@@ -114,14 +117,14 @@ namespace AppUIBasics.Common
                 }
             };
         }
-
-        private void HardwareButtons_BackPressed(object sender, Windows.Phone.UI.Input.BackPressedEventArgs e)
-        {
-            if (this.Frame.CanGoBack)
-            {
-                this.Frame.GoBack();
-            }
-        }
+        //would not compile
+        //private void HardwareButtons_BackPressed(object sender, Windows.Phone.UI.Input.BackPressedEventArgs e)
+        //{
+        //    if (this.Frame.CanGoBack)
+        //    {
+        //        this.Frame.GoBack();
+        //    }
+        //}
 
         #region Navigation support
 

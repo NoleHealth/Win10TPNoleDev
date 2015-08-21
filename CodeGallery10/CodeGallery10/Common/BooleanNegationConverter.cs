@@ -1,7 +1,7 @@
 ﻿using System;
 using Windows.UI.Xaml.Data;
 
-namespace AppUIBasics.Common
+namespace MOS.CodeGallery10.Common
 {
     /// <summary>
     /// Value converter that translates true to false and vice versa.

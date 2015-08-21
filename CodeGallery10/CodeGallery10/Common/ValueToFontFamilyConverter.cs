@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Media;
 
-namespace AppUIBasics.Common
+namespace MOS.CodeGallery10.Common
 {
     public class ValueToFontFamilyConverter : IValueConverter
     {

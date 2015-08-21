@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace AppUIBasics.Common
+namespace MOS.CodeGallery10.Common
 {
     /// <summary>
     /// A command whose sole purpose is to relay its functionality 

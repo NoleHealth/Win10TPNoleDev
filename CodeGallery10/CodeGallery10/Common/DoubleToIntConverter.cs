@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.UI.Xaml.Data;
 
-namespace AppUIBasics.Common
+namespace MOS.CodeGallery10.Common
 {
     public class DoubleToIntConverter : IValueConverter
     {

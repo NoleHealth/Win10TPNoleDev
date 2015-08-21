@@ -100,6 +100,8 @@
     <Content Include="Data\DemoData\SystemNavigationData.json" />
     <Content Include="Data\DemoData\DevicesNavigationData.json" />
     <Content Include="Data\DemoData\NetworkAndInternetNavigationData.json" />
+    <Content Include="Data\DesignTimeData\AppBootSettingData.json" />
+    <Content Include="Data\DemoData\AppBootSettingData.json" />
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
@@ -122,10 +124,12 @@
     <Compile Include="Common\ValueToStringConverter.cs" />
     <Compile Include="Common\WrapPanel.cs" />
     <Compile Include="Core\NavigationStyles.cs" />
+    <Compile Include="Data\DataSources\AppBootSettingsDataSource.cs" />
     <Compile Include="Data\DataSources\NavigationDataSource.cs" />
     <Compile Include="Data\DataSources\GalleryDataSource.cs" />
     <Compile Include="Data\GenerateRandomData.cs" />
     <Compile Include="DataModel\ControlInfoDataSource.cs" />
+    <Compile Include="Models\AppBootSetting.cs" />
     <Compile Include="Models\GalleryItem.cs" />
     <Compile Include="Models\GalleryItemGroup.cs" />
     <Compile Include="Models\GroupInfoList.cs" />
