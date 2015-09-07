@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{A1AF7575-E199-4B17-A8F7-8B5D7ED14E57}</ProjectGuid>
+    <ProjectGuid>{9A82F6E0-3AC8-440C-AA37-714920D8FB85}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MOS.CodeGallery10</RootNamespace>
-    <AssemblyName>CodeGallery10</AssemblyName>
+    <RootNamespace>Minimal</RootNamespace>
+    <AssemblyName>Minimal</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion>10.0.10240.0</TargetPlatformVersion>
@@ -17,7 +17,7 @@
     <EnableDotNetNativeCompatibleProfile>true</EnableDotNetNativeCompatibleProfile>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <PackageCertificateKeyFile>CodeGallery10_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateKeyFile>Minimal_TemporaryKey.pfx</PackageCertificateKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
     <DebugSymbols>true</DebugSymbols>
@@ -90,72 +90,41 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
-    <Content Include="ApplicationInsights.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Common\ReadMe.txt" />
-    <Content Include="DataModel\ControlInfoData.json" />
-    <Content Include="Data\DesignTimeData\GalleryData.json" />
-    <Content Include="Data\DemoData\GalleryData.json" />
-    <Content Include="Data\DemoData\SystemNavigationData.json" />
-    <Content Include="Data\DemoData\DevicesNavigationData.json" />
-    <Content Include="Data\DemoData\NetworkAndInternetNavigationData.json" />
-    <Content Include="Data\DesignTimeData\AppBootSettingData.json" />
-    <Content Include="Data\DemoData\AppBootSettingData.json" />
+    <None Include="Minimal_TemporaryKey.pfx" />
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Common\BooleanNegationConverter.cs" />
-    <Compile Include="Common\BooleanToVisibilityConverter.cs" />
-    <Compile Include="Common\ColorStringConverter.cs" />
-    <Compile Include="Common\ComboBoxItemToStringConverter.cs" />
-    <Compile Include="Common\DoubleToIntConverter.cs" />
-    <Compile Include="Common\NavigationHelper.cs" />
-    <Compile Include="Common\NullableBooleanToBooleanConverter.cs" />
-    <Compile Include="Common\ObservableDictionary.cs" />
-    <Compile Include="Common\OrientedSize.cs" />
-    <Compile Include="Common\RelayCommand.cs" />
-    <Compile Include="Common\StringToBrushConverter.cs" />
-    <Compile Include="Common\SuspensionManager.cs" />
-    <Compile Include="Common\ValueToFontFamilyConverter.cs" />
-    <Compile Include="Common\ValueToStringConverter.cs" />
-    <Compile Include="Common\WrapPanel.cs" />
-    <Compile Include="Core\NavigationStyles.cs" />
-    <Compile Include="Data\DataSources\AppBootSettingsDataSource.cs" />
-    <Compile Include="Data\DataSources\NavigationDataSource.cs" />
-    <Compile Include="Data\DataSources\GalleryDataSource.cs" />
-    <Compile Include="Data\GenerateRandomData.cs" />
-    <Compile Include="DataModel\ControlInfoDataSource.cs" />
-    <Compile Include="Models\AppBootSetting.cs" />
-    <Compile Include="Models\GalleryItem.cs" />
-    <Compile Include="Models\GalleryItemGroup.cs" />
-    <Compile Include="Models\GroupInfoList.cs" />
-    <Compile Include="Models\NavHostPageModel.cs" />
-    <Compile Include="Models\NavigationGroup.cs" />
-    <Compile Include="Models\NavigationItem.cs" />
-    <Compile Include="Mvvm\BindableBase.cs" />
-    <Compile Include="Mvvm\DelegateCommand.cs" />
+    <Compile Include="DataSources\ShellDataSource.cs" />
     <Compile Include="Mvvm\ViewModelBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\DevicesPageViewModel.cs" />
+    <Compile Include="Services\SettingsServices\SettingsService.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
-    <Compile Include="ViewModels\NavHostPageViewModel.cs" />
-    <Compile Include="ViewModels\SystemPageViewModel.cs" />
-    <Compile Include="Views\MainPageButtons.xaml.cs">
-      <DependentUpon>MainPageButtons.xaml</DependentUpon>
+    <Compile Include="ViewModels\DetailPageViewModel.cs" />
+    <Compile Include="ViewModels\SettingsPageViewModel.cs" />
+    <Compile Include="ViewModels\ShellViewModel.cs" />
+    <Compile Include="Views\DetailPage.xaml.cs">
+      <DependentUpon>DetailPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shell.xaml.cs">
+      <DependentUpon>Shell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Splash.xaml.cs">
+      <DependentUpon>Splash.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <None Include="CodeGallery10_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\Default.rd.xml" />
@@ -172,18 +141,35 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
     <Page Include="Styles\Custom.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\MainPageButtons.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="Views\DetailPage.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SettingsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Shell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Splash.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <SDKReference Include="BehaviorsXamlSDKManaged, Version=12.0">
@@ -191,11 +177,7 @@
     </SDKReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DataModels\" />
-    <Folder Include="Services\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\Template10\Template10Library\Template10Library.csproj">
+    <ProjectReference Include="..\..\Template10\Template10Library\Template10Library.csproj">
       <Project>{ac3e4f10-6615-4e16-bb0f-104760c92b95}</Project>
       <Name>Template10Library</Name>
     </ProjectReference>

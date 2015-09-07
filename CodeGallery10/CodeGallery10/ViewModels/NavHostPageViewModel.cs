@@ -31,7 +31,7 @@ namespace MOS.CodeGallery10.ViewModels
             }
         }
 
-        public async override void OnNavigatedTo(string parameter, NavigationMode mode, IDictionary<string, object> state)
+        public async override void OnNavigatedTo(object parameter, NavigationMode mode, IDictionary<string, object> state)
         {
             if (state.Any())
             //{
@@ -47,7 +47,7 @@ namespace MOS.CodeGallery10.ViewModels
             //    Value = string.Format("You passed '{0}'", parameter?.ToString());
             //}
 
-            var ps = parameter?.Split(new char[] { ',' });
+            var ps = parameter?.ToString().Split(new char[] { ',' });
 
             if(ps.Length >=2)
             {

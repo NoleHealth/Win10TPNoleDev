@@ -5,18 +5,14 @@ using Template10.Common;
 
 namespace MOS.CodeGallery10.Mvvm
 {
-    public abstract class BindableBase : INotifyPropertyChanged, Template10.Mvvm.IBindable
+    public abstract class BindableBase : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-
         public async void RaisePropertyChanged([CallerMemberName]string propertyName = null)
         {
             if (Windows.ApplicationModel.DesignMode.DesignModeEnabled)
                 return;
-            await WindowWrapper.Current().Dispatcher.DispatchAsync(() =>
-            {
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-            });
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         public bool Set<T>(ref T storage, T value, [CallerMemberName()]string propertyName = null)

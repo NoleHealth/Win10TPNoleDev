@@ -37,35 +37,26 @@ namespace MOS.CodeGallery10
         {
 
             InitializeComponent();
-
-
-        }
-
-        public override Task OnInitializeAsync()
-        {
-            // runs before everything
             _appBootSettings = AppBootSettingsDataSource.GetAppBootSetting("");
 
             this.ShowShellBackButton = _appBootSettings.ShowAppBackButtonInTitleBar;
 
-            return base.OnInitializeAsync();
-
         }
 
-        public override void OnPrelaunch()
-        {
-            // handle prelaunch
+       
 
-        }
+
 
         public override Task OnStartAsync(StartKind startKind, IActivatedEventArgs args)
         {
-            // start the user experience
-            NavigationService.Navigate(typeof(MOS.CodeGallery10.Views.MainPage));
-
-
-
-
+            if (startKind == StartKind.Launch)
+            {
+                this.NavigationService.Navigate(typeof(Views.MainPage));
+            }
+            else
+            {
+                // this.NavigationService.Navigate(typeof(Views.SecondPage));
+            }
             return Task.FromResult<object>(null);
         }
     }

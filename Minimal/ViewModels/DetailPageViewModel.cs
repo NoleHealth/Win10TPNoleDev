@@ -3,18 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Template10.Services.NavigationService;
 using Windows.UI.Xaml.Navigation;
 
-namespace MOS.CodeGallery10.ViewModels
+namespace Minimal.ViewModels
 {
-    public class SystemPageViewModel : Mvvm.ViewModelBase
-    { 
-        public SystemPageViewModel()
+    public class DetailPageViewModel : Minimal.Mvvm.ViewModelBase
+    {
+        public DetailPageViewModel()
         {
-            // designtime data
             if (Windows.ApplicationModel.DesignMode.DesignModeEnabled)
             {
+                // designtime data
                 this.Value = "Designtime value";
+                return;
             }
         }
 
@@ -44,7 +46,7 @@ namespace MOS.CodeGallery10.ViewModels
             return base.OnNavigatedFromAsync(state, suspending);
         }
 
-        public override void OnNavigatingFrom(Template10.Services.NavigationService.NavigatingEventArgs args)
+        public override void OnNavigatingFrom(NavigatingEventArgs args)
         {
             args.Cancel = false;
         }

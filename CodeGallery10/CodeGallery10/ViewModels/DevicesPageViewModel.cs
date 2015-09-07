@@ -18,9 +18,9 @@ namespace MOS.CodeGallery10.ViewModels
                 this.Value = "Designtime value";
             }
         }
-
-        public override void OnNavigatedTo(string parameter, NavigationMode mode, IDictionary<string, object> state)
+        public override void OnNavigatedTo(object parameter, NavigationMode mode, IDictionary<string, object> state)
         {
+       
             if (state.Any())
             {
                 // use cache value(s)
@@ -33,6 +33,7 @@ namespace MOS.CodeGallery10.ViewModels
                 // use navigation parameter
                 Value = string.Format("You passed '{0}'", parameter?.ToString());
             }
+            base.OnNavigatedTo(parameter, mode, state);
         }
 
         public override Task OnNavigatedFromAsync(IDictionary<string, object> state, bool suspending)

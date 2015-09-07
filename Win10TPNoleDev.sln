@@ -3,23 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeGallery10", "CodeGallery10\CodeGallery10.csproj", "{A1AF7575-E199-4B17-A8F7-8B5D7ED14E57}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeGallery10", "CodeGallery10\CodeGallery10\CodeGallery10.csproj", "{A1AF7575-E199-4B17-A8F7-8B5D7ED14E57}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Specs", "Specs", "{D7ABFEAE-D9AF-4A12-8E9F-98410AAB7CFD}"
 	ProjectSection(SolutionItems) = preProject
-		..\SpecDocs\UAP App Spec - Code Gallery.xlsx = ..\SpecDocs\UAP App Spec - Code Gallery.xlsx
+		SpecDocs\UAP App Spec - Code Gallery.xlsx = SpecDocs\UAP App Spec - Code Gallery.xlsx
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Template10Library", "..\..\Template10\Template10Library\Template10Library.csproj", "{AC3E4F10-6615-4E16-BB0F-104760C92B95}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Template10Library", "..\Template10\Template10Library\Template10Library.csproj", "{AC3E4F10-6615-4E16-BB0F-104760C92B95}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApplication1", "WindowsFormsApplication1\WindowsFormsApplication1.csproj", "{2075D570-CBBC-4E2C-B6D8-62CB9304F5E8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApplication1", "CodeGallery10\WindowsFormsApplication1\WindowsFormsApplication1.csproj", "{2075D570-CBBC-4E2C-B6D8-62CB9304F5E8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Todos", "Todos", "{966EC22F-503E-4761-A486-8D0458BE56B8}"
 	ProjectSection(SolutionItems) = preProject
-		..\Dev Samples List.html = ..\Dev Samples List.html
+		Dev Samples List.html = Dev Samples List.html
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Minimal", "..\Minimal\Minimal.csproj", "{9A82F6E0-3AC8-440C-AA37-714920D8FB85}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Minimal", "Minimal\Minimal.csproj", "{9A82F6E0-3AC8-440C-AA37-714920D8FB85}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

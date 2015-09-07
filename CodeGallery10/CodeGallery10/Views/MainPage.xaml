@@ -111,8 +111,8 @@
     <Page.TopAppBar>
         <CommandBar ClosedDisplayMode="Minimal">
             <CommandBar.PrimaryCommands>
-                <controls:BackAppBarButton Frame="{x:Bind Frame}" />
-                <controls:ForwardAppBarButton Frame="{x:Bind Frame}" />
+                <!--<controls:BackAppBarButton Frame="{x:Bind Frame}" />
+                <controls:ForwardAppBarButton Frame="{x:Bind Frame}" />-->
                 <AppBarButton Label="Path" >
                     <AppBarButton.Icon>
                         <PathIcon HorizontalAlignment="Center" VerticalAlignment="Center" Data="M9.99967861175537,0L15.0010814666748,4.41280698776245 20,8.82655048370361 13.8758192062378,8.82655048370361 13.8758192062378,20 6.12418174743652,20 6.12418174743652,8.82655048370361 0,8.82655048370361 4.9995322227478,4.41280698776245 9.99967861175537,0z" />

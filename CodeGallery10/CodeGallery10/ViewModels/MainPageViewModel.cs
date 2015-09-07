@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Template10.Mvvm;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Navigation;
 
@@ -13,6 +14,10 @@ namespace MOS.CodeGallery10.ViewModels
 {
     public class MainPageViewModel : Mvvm.ViewModelBase
     {
+
+        bool _busy = false;
+        public bool Busy { get { return _busy; } set { Set(ref _busy, value); } }
+
         //private GroupInfoList _groups;
         //public GroupInfoList Groups
         //{
@@ -89,28 +94,63 @@ namespace MOS.CodeGallery10.ViewModels
                 
             }
         }
-
-        public async override void OnNavigatedTo(string parameter, NavigationMode mode, IDictionary<string, object> state)
+        public override void OnNavigatedTo(object parameter, NavigationMode mode, IDictionary<string, object> state)
         {
-            //if (state.Any())
-            //{
-            //    // use cache value(s)
-            //    if (state.ContainsKey(nameof(Value)))
-            //        Value = state[nameof(Value)]?.ToString();
-            //    // clear any cache
-            //    state.Clear();
-            //}
-            //else
-            //{
-            //    // parameters are not applicable 
-            //    // use navigation parameter
-            ////    Value = string.Format("You passed '{0}'", parameter?.ToString());
-            //}
+            LoadCommand.Execute(null);
+            base.OnNavigatedTo(parameter, mode, state);
 
-            //_groups = /*await*/ GalleryItem.GetContactsGrouped(250);
-            _groups = await GalleryDataSource.GetGroupsAsync();
-            SelectedGalleryItem = null;
+            
+
         }
+
+        DelegateCommand _loadCommand = default(DelegateCommand);
+        public DelegateCommand LoadCommand { get { return _loadCommand ?? (_loadCommand = new DelegateCommand(ExecuteLoadCommand, CanExecuteLoadCommand)); } }
+        private bool CanExecuteLoadCommand() { return !Busy; }
+        private async void ExecuteLoadCommand()
+        {
+            try
+            {
+                Busy = true;
+                await Task.Delay(2000);
+                _groups = await GalleryDataSource.GetGroupsAsync();
+
+                //var data = _todoListRepository.Sample(10).Select(x => new ViewModels.TodoListViewModel(x));
+                //this.TodoLists.Clear();
+                //foreach (var item in data.OrderBy(x => x.TodoList.Title))
+                //{
+                //    this.TodoLists.Add(item);
+                //}
+            }
+            finally { Busy = false; }
+        }
+
+        //public override async void OnNavigatingFrom(NavigatingEventArgs args)
+        //{
+        //    await ExecuteSaveCommand();
+        //}
+
+
+        //public async override void OnNavigatedTo(string parameter, NavigationMode mode, IDictionary<string, object> state)
+        //{
+        //    //if (state.Any())
+        //    //{
+        //    //    // use cache value(s)
+        //    //    if (state.ContainsKey(nameof(Value)))
+        //    //        Value = state[nameof(Value)]?.ToString();
+        //    //    // clear any cache
+        //    //    state.Clear();
+        //    //}
+        //    //else
+        //    //{
+        //    //    // parameters are not applicable 
+        //    //    // use navigation parameter
+        //    ////    Value = string.Format("You passed '{0}'", parameter?.ToString());
+        //    //}
+
+        //    //_groups = /*await*/ GalleryItem.GetContactsGrouped(250);
+        //    _groups = await GalleryDataSource.GetGroupsAsync();
+        //    SelectedGalleryItem = null;
+        //}
 
         public override Task OnNavigatedFromAsync(IDictionary<string, object> state, bool suspending)
         {
@@ -145,10 +185,10 @@ namespace MOS.CodeGallery10.ViewModels
 
         public void GotoPage(object sender, RoutedEventArgs e)
         {
-            if ((e.OriginalSource as Windows.UI.Xaml.Controls.Button).Name == "SubmitButton2")
-                this.NavigationService.Navigate(typeof(Views.DevicesPage), this.Value);
-            else
-                this.NavigationService.Navigate(typeof(Views.SystemPage), this.Value);
+            //if ((e.OriginalSource as Windows.UI.Xaml.Controls.Button).Name == "SubmitButton2")
+            //    this.NavigationService.Navigate(typeof(Views.DevicesPage), this.Value);
+            //else
+            //    this.NavigationService.Navigate(typeof(Views.SystemPage), this.Value);
         }
         private bool _canDragItems = false;
         public bool CanDragItems { get { return _canDragItems; } set { Set(ref _canDragItems, value); } }

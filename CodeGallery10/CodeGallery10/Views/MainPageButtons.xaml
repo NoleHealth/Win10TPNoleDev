@@ -20,8 +20,8 @@
     <Page.TopAppBar>
         <CommandBar ClosedDisplayMode="Minimal">
             <CommandBar.PrimaryCommands>
-                <controls:BackAppBarButton Frame="{x:Bind Frame}" />
-                <controls:ForwardAppBarButton Frame="{x:Bind Frame}" />
+                <!--<controls:BackAppBarButton Frame="{x:Bind Frame}" />
+                <controls:ForwardAppBarButton Frame="{x:Bind Frame}" />-->
             </CommandBar.PrimaryCommands>
         </CommandBar>
     </Page.TopAppBar>
